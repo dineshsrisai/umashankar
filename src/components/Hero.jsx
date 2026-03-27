@@ -1,17 +1,20 @@
+import { useNavigate } from "react-router-dom";
+
 const Hero = () => {
+  const navigate = useNavigate();
   return (
-    <div>
-      <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content text-center">
-          <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Hello there</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button className="btn btn-primary">Get Started</button>
-          </div>
+    <div className="hero min-h-screen  from-primary to-base-200">
+      <div className="hero-content text-center">
+        <div>
+          <h1 className="w-full text-center text-4xl font-bold tracking-tight text-base-content whitespace-nowrap">
+            Welcome! Discover Our Range of Services
+          </h1>
+          <button
+            className="my-5 mx-auto block btn btn-primary btn-lg text-lg font-bold shadow-lg hover:scale-105 transition-transform duration-200"
+            onClick={() => navigate("/")}
+          >
+            Get Started ➤
+          </button>
         </div>
       </div>
     </div>
