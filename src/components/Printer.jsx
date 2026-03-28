@@ -1,39 +1,26 @@
+import { useEffect, useState } from "react";
 import Card from "./Card";
+import axios from "axios";
 
 const Printer = () => {
-  const services = [
-    {
-      title: "Printers Service",
-      description: "High quality flex printing",
-      image: "/printer.jpg",
-    },
-    {
-      title: "Printers Service",
-      description: "High quality flex printing",
-      image: "/printer.jpg",
-    },{
-      title: "Printers Service",
-      description: "High quality flex printing",
-      image: "/printer.jpg",
-    },{
-      title: "Printers Service",
-      description: "High quality flex printing",
-      image: "/printer.jpg",
-    },
-    {
-      title: "Printers Service",
-      description: "High quality flex printing",
-      image: "/printer.jpg",
-    },{
-      title: "Printers Service",
-      description: "High quality flex printing",
-      image: "/printer.jpg",
-    },
-  ];
+  const [devices, setDevices] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await axios.get("http://localhost:3000/printer");
+        setDevices(data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div>
       <div className="flex flex-wrap justify-center gap-6 mx-20 my-10 pb-15">
-        {services.map((item, index) => (
+        {devices.map((item, index) => (
           <Card
             key={index}
             title={item.title}

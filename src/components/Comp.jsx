@@ -1,43 +1,26 @@
+import { useEffect, useState } from "react";
 import Card from "./Card";
+import axios from "axios";
 
-const Comp = () => {
-  const services = [
-    {
-      title: "Computers and Laptops Service",
-      description: "Custom banners",
-      image: "/laptop.avif",
-      path: "/comp",
-    },{
-      title: "Computers and Laptops Service",
-      description: "Custom banners",
-      image: "/laptop.avif",
-      path: "/comp",
-    },{
-      title: "Computers and Laptops Service",
-      description: "Custom banners",
-      image: "/laptop.avif",
-      path: "/comp",
-    },{
-      title: "Computers and Laptops Service",
-      description: "Custom banners",
-      image: "/laptop.avif",
-      path: "/comp",
-    },{
-      title: "Computers and Laptops Service",
-      description: "Custom banners",
-      image: "/laptop.avif",
-      path: "/comp",
-    },{
-      title: "Computers and Laptops Service",
-      description: "Custom banners",
-      image: "/laptop.avif",
-      path: "/comp",
-    },
-  ];
+const Printer = () => {
+  const [devices, setDevices] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await axios.get("http://localhost:3000/computer");
+        setDevices(data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div>
       <div className="flex flex-wrap justify-center gap-6 mx-20 my-10 pb-15">
-        {services.map((item, index) => (
+        {devices.map((item, index) => (
           <Card
             key={index}
             title={item.title}
@@ -50,4 +33,4 @@ const Comp = () => {
   );
 };
 
-export default Comp;
+export default Printer;

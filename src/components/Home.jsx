@@ -13,13 +13,13 @@ const Home = () => {
       title: "Computers and Laptops Service",
       description: "Custom banners",
       image: "/laptop.avif",
-      path: "/comp",
+      path: "/computer",
     },
     {
       title: "CCTV Installation and Services",
       description: "Professional business cards",
       image: "/cccamera.webp",
-      path: "/cc",
+      path: "/cctv",
     },
   ];
 

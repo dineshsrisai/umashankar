@@ -15,8 +15,8 @@ const App = () => {
           <Route path="/" element={<Body />}>
             <Route index element={<Home />}></Route>
             <Route path="/printer" element={<Printer />} />
-            <Route path="/comp" element={<Comp />} />
-            <Route path="/cc" element={<Cctv/>} />
+            <Route path="/computer" element={<Comp />} />
+            <Route path="/cctv" element={<Cctv/>} />
           </Route>
         </Routes>
       </BrowserRouter>
