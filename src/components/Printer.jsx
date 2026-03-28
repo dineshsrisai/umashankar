@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Card from "./Card";
+import Cards from "./Cards";
 import axios from "axios";
 
 const Printer = () => {
@@ -21,7 +21,7 @@ const Printer = () => {
     <div>
       <div className="flex flex-wrap justify-center gap-6 mx-20 my-10 pb-15">
         {devices.map((item, index) => (
-          <Card
+          <Cards
             key={index}
             title={item.title}
             description={item.description}

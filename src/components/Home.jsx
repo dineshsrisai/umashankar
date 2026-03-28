@@ -11,29 +11,34 @@ const Home = () => {
     },
     {
       title: "Computers and Laptops Service",
-      description: "Custom banners",
+      description: "Repair & maintenance solutions",
       image: "/laptop.avif",
       path: "/computer",
     },
     {
       title: "CCTV Installation and Services",
-      description: "Professional business cards",
+      description: "Security systems for home & business",
       image: "/cccamera.webp",
       path: "/cctv",
     },
   ];
 
   return (
-    <div className="grid grid-wrap justify-center gap-6 mx-20 my-10 pb-15">
-      {services.map((item, index) => (
-        <Link to={item.path} key={index}>
-          <Card
-            title={item.title}
-            description={item.description}
-            image={item.image}
-          />
-        </Link>
-      ))}
+    <div className="max-w-6xl mx-auto px-6 py-12">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">
+        Our Services
+      </h1>
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((item, index) => (
+          <Link to={item.path} key={index}>
+            <Card
+              title={item.title}
+              description={item.description}
+              image={item.image}
+            />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
