@@ -1,7 +1,7 @@
 const Card = ({ title, description, image }) => {
   return (
     <div className="card bg-base-100 shadow-md hover:shadow-xl hover:scale-105 transition duration-300 rounded-xl overflow-hidden">
-      <figure className="bg-gray-100 p-4">
+      <figure className="bg-white p-4">
         <img
           src={image}
           alt={title}
@@ -12,7 +12,7 @@ const Card = ({ title, description, image }) => {
         <h2 className="card-title text-lg font-semibold">
           {title}
         </h2>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-white">
           {description}
         </p>
         <div className="card-actions justify-end mt-4">
