@@ -1,45 +1,46 @@
 import { Link } from "react-router-dom";
 import Card from "./Card";
+import { Star, Clock, MapPin } from "lucide-react";
 
 const services = [
   {
     title: "Printers Service",
-    description: "High quality flex printing",
+    description: "Printer repair and spare parts replacement",
     image: "/printer.jpg",
     path: "/printer",
   },
   {
     title: "Computers & Laptops",
-    description: "Repair & maintenance solutions",
+    description: "Computer & Laptop Repair",
     image: "/laptop.avif",
     path: "/computer",
   },
   {
     title: "CCTV Installation",
-    description: "Security systems for home & business",
+    description: "CCTV installation, wiring, and DVR setup",
     image: "/cccamera.webp",
     path: "/cctv",
   },
 ];
 
-const InfoItem = ({ emoji, text }) => (
-  <div className="flex items-center gap-2 text-gray-300">
-    <span className="text-lg">{emoji}</span>
-    <span className="text-sm font-medium tracking-wide">{text}</span>
+const InfoItem = ({ Icon, text }) => (
+  <div className="flex items-center gap-2 text-base-content/70">
+    <Icon className="w-4 h-4 text-primary shrink-0" />
+    <span className="text-sm font-medium">{text}</span>
   </div>
 );
 
 const Home = () => {
   return (
     <div className="min-h-screen">
-      <div className="bg-base-300 border-b border-white/5">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex flex-wrap justify-center items-center gap-x-10 gap-y-3">
-          <InfoItem emoji="⭐" text="Since 2015" />
-          <span className="hidden sm:block w-px h-5 bg-white/10" />
-          <InfoItem emoji="🕙" text="10:00 AM – 10:00 PM" />
-          <span className="hidden sm:block w-px h-5 bg-white/10" />
+      <div className="bg-base-100 border-b-2 border-primary/20">
+        <div className="max-w-5xl mx-auto px-6 py-3 flex flex-wrap justify-center items-center gap-x-8 gap-y-2">
+          <InfoItem Icon={Star} text="Since 2015" />
+          <span className="hidden sm:block w-px h-6 bg-primary/20" />
+          <InfoItem Icon={Clock} text="10:00 AM – 10:00 PM" />
+          <span className="hidden sm:block w-px h-6 bg-primary/20" />
           <InfoItem
-            emoji="📍"
+            Icon={MapPin}
             text="15-6-19 Abothulavari Street, Palakol – 534260"
           />
         </div>
@@ -50,7 +51,7 @@ const Home = () => {
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
             Our Services
           </h1>
-          <div className="mx-auto w-12 h-0.5 bg-indigo-500 rounded-full" />
+          <div className="mx-auto w-12 h-0.5 bg-primary rounded-full" />
         </div>
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
