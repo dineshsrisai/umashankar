@@ -18,7 +18,7 @@ const Printer = () => {
   }, []);
 
   return (
-    <div>
+    <div className="min-h-screen">
       <div className="flex flex-wrap justify-center gap-6 mx-20 my-10 pb-15">
         {devices.map((item, index) => (
           <Cards
