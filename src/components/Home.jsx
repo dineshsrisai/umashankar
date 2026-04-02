@@ -33,14 +33,16 @@ const InfoItem = ({ Icon, text }) => (
 const Home = () => {
   return (
     <div className="min-h-screen">
-      {/* Thin utility bar */}
       <div className="bg-slate-900 py-1.5">
         <div className="max-w-5xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-8 gap-y-1">
           <InfoItem Icon={Star} text="Since 2015" />
           <span className="hidden sm:block w-px h-3.5 bg-slate-600" />
           <InfoItem Icon={Clock} text="10:00 AM – 10:00 PM" />
           <span className="hidden sm:block w-px h-3.5 bg-slate-600" />
-          <InfoItem Icon={MapPin} text="15-6-19 Abothulavari Street, Palakol – 534260" />
+          <InfoItem
+            Icon={MapPin}
+            text="15-6-19 Abothulavari Street, Palakol – 534260"
+          />
         </div>
       </div>
 

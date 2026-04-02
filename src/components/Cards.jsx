@@ -11,9 +11,7 @@ const Cards = ({ title, description, image }) => {
         />
       </div>
       <div className="p-5 flex flex-col flex-1">
-        <h2 className="text-base font-semibold text-slate-900 mb-1">
-          {title}
-        </h2>
+        <h2 className="text-base font-semibold text-slate-900 mb-1">{title}</h2>
         <p className="text-sm text-slate-600 leading-relaxed line-clamp-2 flex-1">
           {description}
         </p>

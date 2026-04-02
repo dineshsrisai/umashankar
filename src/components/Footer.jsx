@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="max-w-5xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {/* Brand */}
+
         <div>
           <h3 className="text-white font-bold text-lg mb-2">
             UmaShankar Printers & Solutions
@@ -15,7 +15,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h3 className="text-white font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
@@ -25,7 +24,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact & Hours */}
         <div>
           <h3 className="text-white font-semibold mb-3">Visit Us</h3>
           <div className="space-y-2 text-sm">
