@@ -24,34 +24,32 @@ const services = [
 ];
 
 const InfoItem = ({ Icon, text }) => (
-  <div className="flex items-center gap-2 text-base-content/70">
-    <Icon className="w-4 h-4 text-primary shrink-0" />
-    <span className="text-sm font-medium">{text}</span>
+  <div className="flex items-center gap-1.5 text-slate-300">
+    <Icon className="w-3.5 h-3.5 shrink-0" />
+    <span className="text-xs">{text}</span>
   </div>
 );
 
 const Home = () => {
   return (
     <div className="min-h-screen">
-      <div className="bg-base-100 border-b-2 border-primary/20">
-        <div className="max-w-5xl mx-auto px-6 py-3 flex flex-wrap justify-center items-center gap-x-8 gap-y-2">
+      {/* Thin utility bar */}
+      <div className="bg-slate-900 py-1.5">
+        <div className="max-w-5xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-8 gap-y-1">
           <InfoItem Icon={Star} text="Since 2015" />
-          <span className="hidden sm:block w-px h-6 bg-primary/20" />
+          <span className="hidden sm:block w-px h-3.5 bg-slate-600" />
           <InfoItem Icon={Clock} text="10:00 AM – 10:00 PM" />
-          <span className="hidden sm:block w-px h-6 bg-primary/20" />
-          <InfoItem
-            Icon={MapPin}
-            text="15-6-19 Abothulavari Street, Palakol – 534260"
-          />
+          <span className="hidden sm:block w-px h-3.5 bg-slate-600" />
+          <InfoItem Icon={MapPin} text="15-6-19 Abothulavari Street, Palakol – 534260" />
         </div>
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-3">
             Our Services
           </h1>
-          <div className="mx-auto w-12 h-0.5 bg-primary rounded-full" />
+          <div className="mx-auto w-12 h-0.5 bg-blue-700 rounded-full" />
         </div>
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">

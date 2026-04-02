@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Cards from "./Cards";
 import axios from "axios";
 
-const Printer = () => {
+const Cctv = () => {
   const [devices, setDevices] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Printer = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="flex flex-wrap justify-center gap-6 mx-20 my-10 pb-15">
+      <div className="flex flex-wrap justify-center gap-6 mx-20 my-10 pb-16">
         {devices.map((item, index) => (
           <Cards
             key={index}
@@ -33,4 +33,4 @@ const Printer = () => {
   );
 };
 
-export default Printer;
+export default Cctv;

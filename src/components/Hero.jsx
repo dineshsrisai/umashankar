@@ -1,53 +1,52 @@
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
+import NavBar from "./NavBar";
 
 const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <style>{`
-        .hero-nav .navbar {
-          background: transparent !important;
-        }
-        .hero-nav .btn-ghost:hover {
-          background: transparent !important;
-        }
-        .hero-nav .navbar,
-        .hero-nav .btn-ghost,
-        .hero-nav a {
-            color: white !important;
-        }
-      `}</style>
-
+    <div className="relative min-h-screen flex flex-col">
+      {/* Background image */}
       <div
-        className="hero min-h-screen"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
             "url(https://images.pexels.com/photos/23534042/pexels-photo-23534042.jpeg)",
         }}
-      >
-        <div className="hero-overlay"></div>
+      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
 
-        <div className="hero-nav absolute top-2 left-0 right-0 z-10">
-          <Navbar />
-        </div>
-
-        <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="mb-5 text-3xl md:text-3xl font-bold text-center whitespace-nowrap">
-              Welcome! Explore Our Expert Repair & Installation Services
-            </h1>
-            <button
-              className="my-4 btn btn-primary btn-lg font-bold shadow-lg hover:scale-105 transition-transform duration-200"
-              onClick={() => navigate("/")}
-            >
-              Get Started ➤
-            </button>
-          </div>
+      {/* Navbar on top */}
+      <div className="relative z-10">
+        <div className="flex items-center justify-between px-6 py-3">
+          <span className="text-xl font-bold text-white">
+            UmaShankar Printers & Solutions
+          </span>
+          <a
+            href="/"
+            className="px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg transition-colors duration-200"
+          >
+            Contact Us
+          </a>
         </div>
       </div>
-    </>
+
+      {/* Hero content */}
+      <div className="relative z-10 flex-1 flex items-center justify-center text-center px-6">
+        <div className="max-w-3xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-snug">
+            Welcome! Explore Our Expert Repair & Installation Services
+          </h1>
+          <button
+            className="px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold text-lg rounded-lg shadow-lg hover:scale-105 transition-all duration-200"
+            onClick={() => navigate("/")}
+          >
+            Get Started ➤
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 
