@@ -33,4 +33,4 @@ const Printer = () => {
   );
 };
 
-export default Printer;
+export default Printer; 

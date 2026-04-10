@@ -17,7 +17,7 @@ const NavBar = () => {
           <span className="hidden sm:inline">
             UmaShankar Printers & Solutions
           </span>
-          <span className="sm:hidden">UmaShankar P&S</span>
+          <span className="sm:hidden">UmaShankar</span>
         </Link>
 
         <a
