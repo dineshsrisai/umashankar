@@ -2,24 +2,38 @@
 
 A responsive, full-stack service business website for printer repair, computer/laptop repair, and CCTV installation services based in Palakol, Andhra Pradesh.
 
+🌐 **Live Demo:** [soon](#)
+
 ---
 
-## Tech Stack
+## ✨ Features
+
+- **Modern & Responsive UI** — Built with a mobile-first approach using Tailwind CSS
+- **Client-Side Routing** — Seamless navigation using React Router DOM
+- **Direct WhatsApp Integration** — Quick inquiry buttons pre-filled with dynamic messages
+- **Full-Stack Architecture** — Powered by a robust Node.js/Express backend
+- **Optimized Database** — Single MongoDB collection utilizing a `type` field for efficient querying
+
+---
+
+## 🛠️ Tech Stack
 
 **Frontend**
-- [React](https://react.dev/) (Vite)
-- [React Router DOM](https://reactrouter.com/) — client-side routing
-- [Tailwind CSS](https://tailwindcss.com/) — utility-first styling
-- [Lucide React](https://lucide.dev/) — icons
-- [Axios](https://axios-http.com/) — HTTP requests
+
+- [React](https://react.dev/) + [Vite](https://vitejs.dev/) — Fast, modern frontend tooling
+- [React Router DOM](https://reactrouter.com/) — Client-side routing
+- [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling framework
+- [Lucide React](https://lucide.dev/) — Clean, consistent iconography
+- [Axios](https://axios-http.com/) — Promise-based HTTP client
 
 **Backend**
-- [Node.js](https://nodejs.org/) + [Express](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/) — single collection with a `type` enum field
+
+- [Node.js](https://nodejs.org/) + [Express](https://expressjs.com/) — Fast, unopinionated server framework
+- [MongoDB](https://www.mongodb.com/) — NoSQL database (single collection with a `type` field)
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 ├── public/
@@ -38,28 +52,30 @@ A responsive, full-stack service business website for printer repair, computer/l
 │   │   ├── Printer.jsx       # Printer products listing page
 │   │   ├── Comp.jsx          # Computer & Laptop products listing page
 │   │   └── Cctv.jsx          # CCTV products listing page
-│   ├── utils/
-│   │   └── constants.js      # Phone number and WhatsApp message
 │   ├── App.jsx               # Router setup
 │   ├── main.jsx              # React entry point
 │   └── index.css             # Global styles
+├── server/                   # Backend application (Express & MongoDB)
+├── .env                      # Environment variables (do not commit)
+├── .env.example              # Template for environment variables
+└── .gitignore
 ```
 
 ---
 
-## Routes
+## 🚦 Routes
 
-| Path        | Component  | Description                          |
-|-------------|------------|--------------------------------------|
-| `/hero`     | `Hero`     | Full-screen landing page             |
-| `/`         | `Home`     | Services grid (Printers, Laptops, CCTV) |
-| `/printer`  | `Printer`  | Printer products and repair services |
-| `/computer` | `Comp`     | Computer & laptop repair products    |
-| `/cctv`     | `Cctv`     | CCTV installation products           |
+| Path        | Component | Description                             |
+| ----------- | --------- | --------------------------------------- |
+| `/hero`     | `Hero`    | Full-screen landing page                |
+| `/`         | `Home`    | Services grid (Printers, Laptops, CCTV) |
+| `/printer`  | `Printer` | Printer products and repair services    |
+| `/computer` | `Comp`    | Computer & laptop repair products       |
+| `/cctv`     | `Cctv`    | CCTV installation products              |
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -74,70 +90,128 @@ git clone https://github.com/your-username/umashankar-printers.git
 cd umashankar-printers
 
 # Install frontend dependencies
-cd client
 npm install
 
 # Install backend dependencies
-cd ../server
+cd server
 npm install
 ```
 
-### Environment Setup
+---
 
-Create a `.env` file in the `server/` directory:
+## ⚙️ Environment Variables
 
-### Running the App
+### Frontend — create `.env` in the project root (next to `vite.config.js`)
+
+```env
+VITE_MOBILE=919912512597;
+VITE_MESSAGE=Hi, I am looking for repair/service for my printer/computer/CCTV system. Could you please help me with the details?
+```
+
+| Variable       | Description                                             |
+| -------------- | ------------------------------------------------------- |
+| `VITE_MOBILE`  | WhatsApp number with country code, no `+` or spaces     |
+| `VITE_MESSAGE` | Default WhatsApp message shown in NavBar contact button |
+
+> Vite only exposes variables prefixed with `VITE_` to the browser. Access them via `import.meta.env`.
+
+### Backend — create `.env` inside the `/server` folder
+
+```env
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/umashankar
+```
+
+### `.env.example`
+
+Commit this file so other developers know what variables are required:
+
+```env
+# Frontend (.env in root)
+VITE_MOBILE=
+VITE_MESSAGE=
+
+# Backend (.env in /server)
+PORT=
+MONGO_URI=
+```
+
+---
+
+## 🏃 Running the Application
 
 ```bash
 # Start the backend (from /server)
 npm start
 
-# Start the frontend (from /client)
+# Start the frontend (from project root)
 npm run dev
 ```
 
-The frontend runs at `http://localhost:5173` and the backend API at `http://localhost:3000`.
+- Frontend: `http://localhost:5173`
+- Backend API: `http://localhost:3000`
+
+> After editing any `.env` file, restart the dev servers — environment changes do not hot-reload.
 
 ---
 
-## API Endpoints
+## 📡 API Endpoints
 
-| Method | Endpoint    | Description                  |
-|--------|-------------|------------------------------|
-| GET    | `/printer`  | Fetch all printer products   |
-| GET    | `/computer` | Fetch all computer products  |
-| GET    | `/cctv`     | Fetch all CCTV products      |
+The backend uses a single MongoDB collection filtered by the `type` field (`"printer"`, `"computer"`, `"cctv"`) per route.
 
-Each endpoint returns an array of objects:
+| Method | Endpoint    | Description                 |
+| ------ | ----------- | --------------------------- |
+| GET    | `/printer`  | Fetch all printer products  |
+| GET    | `/computer` | Fetch all computer products |
+| GET    | `/cctv`     | Fetch all CCTV products     |
+
+**Sample Response:**
 
 ```json
 [
   {
     "title": "HP LaserJet 1020",
     "description": "Monochrome laser printer, ideal for office use.",
-    "image": "https://..."
+    "image": "https://example.com/image.jpg",
+    "type": "printer"
   }
 ]
 ```
 
-The backend uses a **single MongoDB collection** with a `type` field (`"printer"`, `"computer"`, `"cctv"`) filtered per route via `req.params.type` or hardcoded route handlers.
+---
+
+## 📱 Responsive Design
+
+| Breakpoint     | Grid Columns | Navigation     |
+| -------------- | ------------ | -------------- |
+| Mobile < 640px | 1 column     | Hamburger menu |
+| `sm:` 640px+   | 2 columns    | Full navbar    |
+| `lg:` 1024px+  | 3 columns    | Full navbar    |
+| `xl:` 1280px+  | 4 columns    | Full navbar    |
 
 ---
 
-## Responsive Design
+## 🛑 .gitignore
 
-The UI is fully responsive using a **mobile-first** Tailwind approach:
+```
+# Dependencies
+node_modules/
 
-- **Mobile** — single-column card grid, hamburger nav menu
-- **Tablet (`sm:`)** — two-column grid, full navbar
-- **Laptop (`lg:`)** — three-column grid
-- **Large screens (`xl:`)** — four-column grid on product pages
+# Build files
+dist/
+
+# Environment variables
+.env
+.env.local
+
+# OS generated files
+.DS_Store
+```
 
 ---
 
-## Contact
+## 📞 Contact
 
-**UmaShankar Printers & Solutions**  
-15-6-19 Abothulavari Street, Palakol – 534260  
-Hours: 10:00 AM – 10:00 PM, All Days  
-WhatsApp: [Chat with us](https://wa.me/91XXXXXXXXXX)
+**UmaShankar Printers & Solutions**
+📍 15-6-19 Abothulavari Street, Palakol – 534260, Andhra Pradesh, India
+🕒 Hours: 10:00 AM – 10:00 PM, All Days
