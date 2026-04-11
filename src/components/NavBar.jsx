@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { phoneNumber, message } from "../utils/constants";
 import { Menu, X } from "lucide-react";
+
+const phoneNumber = import.meta.env.VITE_MOBILE;
+const message = import.meta.env.VITE_MESSAGE;
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,12 +16,9 @@ const NavBar = () => {
           to="/"
           className="text-base sm:text-xl font-bold text-slate-900 hover:text-blue-700 transition-colors leading-tight"
         >
-          <span className="hidden sm:inline">
-            UmaShankar Printers & Solutions
-          </span>
+          <span className="hidden sm:inline">UmaShankar Printers & Solutions</span>
           <span className="sm:hidden">UmaShankar</span>
         </Link>
-
         <a
           href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
           target="_blank"
@@ -34,38 +33,19 @@ const NavBar = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          {menuOpen ? (
-            <X className="w-5 h-5" />
-          ) : (
-            <Menu className="w-5 h-5" />
-          )}
+          {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {menuOpen && (
         <div className="sm:hidden border-t border-slate-100 px-4 py-3 flex flex-col gap-3">
-          
-          <Link
-            to="/printer"
-            className="text-sm font-medium text-slate-700 hover:text-blue-700"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link to="/printer" className="text-sm font-medium text-slate-700 hover:text-blue-700" onClick={() => setMenuOpen(false)}>
             Printers Service
           </Link>
-
-          <Link
-            to="/computer"
-            className="text-sm font-medium text-slate-700 hover:text-blue-700"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link to="/computer" className="text-sm font-medium text-slate-700 hover:text-blue-700" onClick={() => setMenuOpen(false)}>
             Computers & Laptops
           </Link>
-
-          <Link
-            to="/cctv"
-            className="text-sm font-medium text-slate-700 hover:text-blue-700"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link to="/cctv" className="text-sm font-medium text-slate-700 hover:text-blue-700" onClick={() => setMenuOpen(false)}>
             CCTV Installation
           </Link>
 

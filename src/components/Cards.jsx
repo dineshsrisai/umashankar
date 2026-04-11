@@ -1,10 +1,8 @@
-import { phoneNumber } from "../utils/constants";
+const phoneNumber = import.meta.env.VITE_MOBILE;
 
 const Cards = ({ title, description, image }) => {
   return (
     <div className="flex flex-col bg-white border border-slate-200 shadow-sm hover:shadow-md transition duration-300 rounded-xl overflow-hidden w-full">
-      
-      {/* Image */}
       <div className="h-44 sm:h-48 bg-white flex items-center justify-center overflow-hidden">
         <img
           src={image}
@@ -13,7 +11,6 @@ const Cards = ({ title, description, image }) => {
         />
       </div>
 
-      {/* Content */}
       <div className="p-4 sm:p-5 flex flex-col flex-1">
         <h2 className="text-sm sm:text-base font-semibold text-slate-900 mb-1">
           {title}
@@ -22,11 +19,9 @@ const Cards = ({ title, description, image }) => {
         <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-2 flex-1">
           {description}
         </p>
-
-        {/* CTA */}
         <a
           href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-            `Hi, I'm interested in: ${title}`
+            `Hi, I'm interested in: ${title}`,
           )}`}
           target="_blank"
           rel="noopener noreferrer"
