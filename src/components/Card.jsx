@@ -8,15 +8,15 @@ const Card = ({ title, description, image }) => {
           className="h-full w-full object-contain p-6 mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-
       <div className="p-5 flex flex-col gap-3">
         <div>
           <h2 className="font-semibold text-base text-slate-900 leading-snug">
             {title}
           </h2>
-          <p className="text-sm text-slate-600 mt-1 line-clamp-2">{description}</p>
+          <p className="text-sm text-slate-600 mt-1 line-clamp-2">
+            {description}
+          </p>
         </div>
-
         <div className="pt-1">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-700 group-hover:text-blue-800 transition-colors">
             Explore
@@ -27,7 +27,11 @@ const Card = ({ title, description, image }) => {
               stroke="currentColor"
               strokeWidth={2.5}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </span>
         </div>
