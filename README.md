@@ -10,7 +10,7 @@ A responsive, full-stack service business website for printer repair, computer/l
 
 - **Modern & Responsive UI** — Built with a mobile-first approach using Tailwind CSS
 - **Client-Side Routing** — Seamless navigation using React Router DOM
-- **Direct WhatsApp Integration** — Quick inquiry buttons pre-filled with dynamic messages
+- **Direct WhatsApp Integration** — Contact Us button in NavBar pre-filled with a dynamic message
 - **Full-Stack Architecture** — Powered by a robust Node.js/Express backend
 - **Optimized Database** — Single MongoDB collection utilizing a `type` field for efficient querying
 
@@ -48,7 +48,7 @@ A responsive, full-stack service business website for printer repair, computer/l
 │   │   ├── Hero.jsx          # Full-screen landing hero page
 │   │   ├── Home.jsx          # Services grid (main landing)
 │   │   ├── Card.jsx          # Service card (used on Home)
-│   │   ├── Cards.jsx         # Product card with WhatsApp enquiry button
+│   │   ├── Cards.jsx         # Product card (used on service pages)
 │   │   ├── Printer.jsx       # Printer products listing page
 │   │   ├── Comp.jsx          # Computer & Laptop products listing page
 │   │   └── Cctv.jsx          # CCTV products listing page
@@ -65,13 +65,15 @@ A responsive, full-stack service business website for printer repair, computer/l
 
 ## 🚦 Routes
 
-| Path        | Component | Description                             |
-| ----------- | --------- | --------------------------------------- |
-| `/hero`     | `Hero`    | Full-screen landing page                |
-| `/`         | `Home`    | Services grid (Printers, Laptops, CCTV) |
-| `/printer`  | `Printer` | Printer products and repair services    |
-| `/computer` | `Comp`    | Computer & laptop repair products       |
-| `/cctv`     | `Cctv`    | CCTV installation products              |
+| Path             | Component | Description                             |
+| ---------------- | --------- | --------------------------------------- |
+| `/`              | `Hero`    | Full-screen landing page                |
+| `/home`          | `Home`    | Services grid (Printers, Laptops, CCTV) |
+| `/home/printer`  | `Printer` | Printer products and repair services    |
+| `/home/computer` | `Comp`    | Computer & laptop repair products       |
+| `/home/cctv`     | `Cctv`    | CCTV installation products              |
+
+> The `/home/printer`, `/home/computer`, and `/home/cctv` routes are nested under `/home` as relative child routes inside `App.jsx`.
 
 ---
 
@@ -104,7 +106,7 @@ npm install
 ### Frontend — create `.env` in the project root (next to `vite.config.js`)
 
 ```env
-VITE_MOBILE=919912512597;
+VITE_MOBILE=919912512597
 VITE_MESSAGE=Hi, I am looking for repair/service for my printer/computer/CCTV system. Could you please help me with the details?
 ```
 
@@ -122,9 +124,6 @@ PORT=3000
 MONGO_URI=mongodb://localhost:27017/umashankar
 ```
 
-### `.env.example`
-
-Commit this file so other developers know what variables are required:
 
 ```env
 # Frontend (.env in root)
