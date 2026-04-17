@@ -7,19 +7,19 @@ const services = [
     title: "Printers Service",
     description: "Printer repair and spare parts replacement",
     image: "/printer.jpg",
-    path: "/printer",
+    path: "/home/printer",
   },
   {
     title: "Computers & Laptops",
     description: "Computer & Laptop Repair",
     image: "/laptop.avif",
-    path: "/computer",
+    path: "/home/computer",
   },
   {
     title: "CCTV Installation",
     description: "CCTV installation, wiring, and DVR setup",
     image: "/cccamera.webp",
-    path: "/cctv",
+    path: "/home/cctv",
   },
 ];
 

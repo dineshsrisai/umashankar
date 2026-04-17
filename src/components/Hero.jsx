@@ -22,7 +22,7 @@ const Hero = () => {
           </span>
 
           <a
-            href="/"
+            href="/home"
             className="px-4 sm:px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg transition-colors duration-200 text-sm sm:text-base"
           >
             Contact Us
@@ -38,7 +38,7 @@ const Hero = () => {
 
           <button
             className="cursor-pointer px-6 sm:px-8 py-2.5 sm:py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold text-base sm:text-lg rounded-lg shadow-lg hover:scale-105 transition-all duration-200"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/home")}
           >
             Get Started ➤
           </button>

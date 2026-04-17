@@ -1,5 +1,3 @@
-const phoneNumber = import.meta.env.VITE_MOBILE;
-
 const Cards = ({ title, description, image }) => {
   return (
     <div className="flex flex-col bg-white border border-slate-200 shadow-sm hover:shadow-md transition duration-300 rounded-xl overflow-hidden w-full">
@@ -16,19 +14,9 @@ const Cards = ({ title, description, image }) => {
           {title}
         </h2>
 
-        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-2 flex-1">
+        <p className="text-xs font-semibold sm:text-sm text-slate-600 leading-relaxed line-clamp-2 flex-1">
           {description}
         </p>
-        <a
-          href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-            `Hi, I'm interested in: ${title}`,
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 block w-full text-center py-2 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold rounded-lg transition-colors duration-200"
-        >
-          Inquire Now
-        </a>
       </div>
     </div>
   );

@@ -18,9 +18,9 @@ const Footer = () => {
         <div>
           <h3 className="text-white font-semibold mb-3 text-sm sm:text-base">Quick Links</h3>
           <ul className="space-y-2 text-xs sm:text-sm">
-            <li><Link to="/printer" className="hover:text-white transition-colors">Printers Service</Link></li>
-            <li><Link to="/computer" className="hover:text-white transition-colors">Computers & Laptops</Link></li>
-            <li><Link to="/cctv" className="hover:text-white transition-colors">CCTV Installation</Link></li>
+            <li><Link to="/home/printer" className="hover:text-white transition-colors">Printers Service</Link></li>
+            <li><Link to="/home/computer" className="hover:text-white transition-colors">Computers & Laptops</Link></li>
+            <li><Link to="/home/cctv" className="hover:text-white transition-colors">CCTV Installation</Link></li>
           </ul>
         </div>
 

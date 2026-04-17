@@ -13,7 +13,7 @@ const NavBar = () => {
       <div className="flex items-center justify-between px-4 sm:px-6 py-3">
         
         <Link
-          to="/"
+          to="/home"
           className="text-base sm:text-xl font-bold text-slate-900 hover:text-blue-700 transition-colors leading-tight"
         >
           <span className="hidden sm:inline">UmaShankar Printers & Solutions</span>
@@ -39,13 +39,13 @@ const NavBar = () => {
 
       {menuOpen && (
         <div className="sm:hidden border-t border-slate-100 px-4 py-3 flex flex-col gap-3">
-          <Link to="/printer" className="text-sm font-medium text-slate-700 hover:text-blue-700" onClick={() => setMenuOpen(false)}>
+          <Link to="/home/printer" className="text-sm font-medium text-slate-700 hover:text-blue-700" onClick={() => setMenuOpen(false)}>
             Printers Service
           </Link>
-          <Link to="/computer" className="text-sm font-medium text-slate-700 hover:text-blue-700" onClick={() => setMenuOpen(false)}>
+          <Link to="/home/computer" className="text-sm font-medium text-slate-700 hover:text-blue-700" onClick={() => setMenuOpen(false)}>
             Computers & Laptops
           </Link>
-          <Link to="/cctv" className="text-sm font-medium text-slate-700 hover:text-blue-700" onClick={() => setMenuOpen(false)}>
+          <Link to="/home/cctv" className="text-sm font-medium text-slate-700 hover:text-blue-700" onClick={() => setMenuOpen(false)}>
             CCTV Installation
           </Link>
 
