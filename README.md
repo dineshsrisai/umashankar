@@ -201,7 +201,6 @@ dist/
 
 # Environment variables
 .env
-
 ```
 
 ---
