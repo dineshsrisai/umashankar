@@ -201,10 +201,7 @@ dist/
 
 # Environment variables
 .env
-.env.local
 
-# OS generated files
-.DS_Store
 ```
 
 ---
