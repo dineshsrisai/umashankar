@@ -1,7 +1,23 @@
-const Cards = ({ title, description, image }) => {
+const Cards = ({ title, description, image, featured }) => {
   return (
-    <div className="flex flex-col bg-white border border-slate-200 shadow-sm hover:shadow-md transition duration-300 rounded-xl overflow-hidden w-full">
-      <div className="h-44 sm:h-48 bg-white flex items-center justify-center overflow-hidden">
+    <div
+      className={`flex flex-col border rounded-xl overflow-hidden w-full transition duration-300
+      ${
+        featured
+          ? "bg-blue-50 border-blue-300 shadow-md hover:shadow-lg"
+          : "bg-white border-slate-200 shadow-sm hover:shadow-md"
+      }`}
+    >
+      <div
+        className={`relative h-44 sm:h-48 flex items-center justify-center overflow-hidden
+        ${featured ? "bg-blue-50" : "bg-white"}`}
+      >
+        {featured && (
+          <span className="absolute top-0 left-0 bg-blue-700 text-white text-xs font-semibold px-2.5 py-1 rounded-br-lg">
+            Featured
+          </span>
+        )}
+
         <img
           src={image}
           alt={title}
@@ -13,7 +29,6 @@ const Cards = ({ title, description, image }) => {
         <h2 className="text-sm sm:text-base font-semibold text-slate-900 mb-1">
           {title}
         </h2>
-
         <p className="text-xs font-semibold sm:text-sm text-slate-600 leading-relaxed line-clamp-2 flex-1">
           {description}
         </p>
