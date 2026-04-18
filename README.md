@@ -1,6 +1,6 @@
-# UmaShankar Printers & Solutions
+# UmaShankar Printers & Solutions — Frontend
 
-A responsive, full-stack service business website for printer repair, computer/laptop repair, and CCTV installation services based in Palakol, Andhra Pradesh.
+A responsive React frontend for a service business website covering printer repair, computer/laptop repair, and CCTV installation services based in Palakol, Andhra Pradesh.
 
 🌐 **Live Demo:** [soon](#)
 
@@ -11,25 +11,17 @@ A responsive, full-stack service business website for printer repair, computer/l
 - **Modern & Responsive UI** — Built with a mobile-first approach using Tailwind CSS
 - **Client-Side Routing** — Seamless navigation using React Router DOM
 - **Direct WhatsApp Integration** — Contact Us button in NavBar pre-filled with a dynamic message
-- **Full-Stack Architecture** — Powered by a robust Node.js/Express backend
-- **Optimized Database** — Single MongoDB collection utilizing a `type` field for efficient querying
+- **Featured Service Highlights** — Featured cards visually distinct from regular product cards
 
 ---
 
 ## 🛠️ Tech Stack
-
-**Frontend**
 
 - [React](https://react.dev/) + [Vite](https://vitejs.dev/) — Fast, modern frontend tooling
 - [React Router DOM](https://reactrouter.com/) — Client-side routing
 - [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling framework
 - [Lucide React](https://lucide.dev/) — Clean, consistent iconography
 - [Axios](https://axios-http.com/) — Promise-based HTTP client
-
-**Backend**
-
-- [Node.js](https://nodejs.org/) + [Express](https://expressjs.com/) — Fast, unopinionated server framework
-- [MongoDB](https://www.mongodb.com/) — NoSQL database (single collection with a `type` field)
 
 ---
 
@@ -48,14 +40,13 @@ A responsive, full-stack service business website for printer repair, computer/l
 │   │   ├── Hero.jsx          # Full-screen landing hero page
 │   │   ├── Home.jsx          # Services grid (main landing)
 │   │   ├── Card.jsx          # Service card (used on Home)
-│   │   ├── Cards.jsx         # Product card (used on service pages)
-│   │   ├── Printer.jsx       # Printer products listing page
+│   │   ├── Cards.jsx         # Product card with optional Featured badge
+│   │   ├── Printer.jsx       # Printer page (Featured + regular sections)
 │   │   ├── Comp.jsx          # Computer & Laptop products listing page
 │   │   └── Cctv.jsx          # CCTV products listing page
 │   ├── App.jsx               # Router setup
 │   ├── main.jsx              # React entry point
 │   └── index.css             # Global styles
-├── server/                   # Backend application (Express & MongoDB)
 ├── .env                      # Environment variables (do not commit)
 ├── .env.example              # Template for environment variables
 └── .gitignore
@@ -77,33 +68,9 @@ A responsive, full-stack service business website for printer repair, computer/l
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js v18+
-- MongoDB running locally or a MongoDB Atlas URI
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/umashankar-printers.git
-cd umashankar-printers
-
-# Install frontend dependencies
-npm install
-
-# Install backend dependencies
-cd server
-npm install
-```
-
----
-
 ## ⚙️ Environment Variables
 
-### Frontend — create `.env` in the project root (next to `vite.config.js`)
+Create a `.env` file in the project root (next to `vite.config.js`):
 
 ```env
 VITE_MOBILE=919912512597
@@ -117,65 +84,51 @@ VITE_MESSAGE=Hi, I am looking for repair/service for my printer/computer/CCTV sy
 
 > Vite only exposes variables prefixed with `VITE_` to the browser. Access them via `import.meta.env`.
 
-### Backend — create `.env` inside the `/server` folder
+### `.env.example`
 
 ```env
-PORT=3000
-MONGO_URI=mongodb://localhost:27017/umashankar
-```
-
-
-```env
-# Frontend (.env in root)
 VITE_MOBILE=
 VITE_MESSAGE=
-
-# Backend (.env in /server)
-PORT=
-MONGO_URI=
 ```
 
 ---
 
-## 🏃 Running the Application
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js v18+
+
+### Installation & Running
 
 ```bash
-# Start the backend (from /server)
-npm start
+# Clone the repository
+git clone https://github.com/dineshsrisai/umashankar-printers.git
+cd umashankar-printers
 
-# Start the frontend (from project root)
+# Install dependencies
+npm install
+
+# Start the dev server
 npm run dev
 ```
 
 - Frontend: `http://localhost:5173`
-- Backend API: `http://localhost:3000`
 
-> After editing any `.env` file, restart the dev servers — environment changes do not hot-reload.
+> After editing `.env`, restart the dev server — environment changes do not hot-reload.
 
 ---
 
-## 📡 API Endpoints
+## ⭐ Exclusive (Featured) Cards
 
-The backend uses a single MongoDB collection filtered by the `type` field (`"printer"`, `"computer"`, `"cctv"`) per route.
+Products with `featured: true` in the database appear in a dedicated **"Exclusive"** section at the top of the page with a blue-tinted card style and an **"Exclusive"** badge. Regular products render below in the standard grid.
 
-| Method | Endpoint    | Description                 |
-| ------ | ----------- | --------------------------- |
-| GET    | `/printer`  | Fetch all printer products  |
-| GET    | `/computer` | Fetch all computer products |
-| GET    | `/cctv`     | Fetch all CCTV products     |
+Currently featured under Printer Services:
 
-**Sample Response:**
-
-```json
-[
-  {
-    "title": "HP LaserJet 1020",
-    "description": "Monochrome laser printer, ideal for office use.",
-    "image": "https://example.com/image.jpg",
-    "type": "printer"
-  }
-]
-```
+| Title            | Description              |
+| ---------------- | ------------------------ |
+| Passbook Printer | Bank passbook specialist |
+| TVS Dot Matrix   | Built for bulk invoicing |
 
 ---
 
@@ -188,18 +141,15 @@ The backend uses a single MongoDB collection filtered by the `type` field (`"pri
 | `lg:` 1024px+  | 3 columns    | Full navbar    |
 | `xl:` 1280px+  | 4 columns    | Full navbar    |
 
+> Exclusive/featured cards always render in a 2-column grid (`grid-cols-1 sm:grid-cols-2`) regardless of breakpoint.
+
 ---
 
 ## 🛑 .gitignore
 
 ```
-# Dependencies
 node_modules/
-
-# Build files
 dist/
-
-# Environment variables
 .env
 ```
 
@@ -209,4 +159,4 @@ dist/
 
 **UmaShankar Printers & Solutions**
 📍 15-6-19 Abothulavari Street, Palakol – 534260, Andhra Pradesh, India
-🕒 Hours: 10:00 AM – 10:00 PM, All Days
+🕒 Hours: 10:00 AM – 10:00 PM, Monday-Saturday
