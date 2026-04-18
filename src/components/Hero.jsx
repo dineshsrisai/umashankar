@@ -17,14 +17,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-6 py-3 gap-3 sm:gap-0">
           <span className="text-lg sm:text-xl font-bold text-white text-center sm:text-left">
             UmaShankar Printers & Solutions
-          </span>
-
-          <a
-            href="/home"
-            className="px-4 sm:px-5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg transition-colors duration-200 text-sm sm:text-base"
-          >
-            Contact Us
-          </a>
+          </span>``
         </div>
       </div>
 
