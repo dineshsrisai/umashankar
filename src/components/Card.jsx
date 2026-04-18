@@ -13,7 +13,7 @@ const Card = ({ title, description, image }) => {
           <h2 className="font-semibold text-base text-slate-900 leading-snug">
             {title}
           </h2>
-          <p className="text-sm font-semibold text-slate-600 mt-1 line-clamp-2">
+          <p className="text-sm opacity-70 font-semibold text-slate-700 mt-1 line-clamp-2">
             {description}
           </p>
         </div>

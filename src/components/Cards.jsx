@@ -29,7 +29,7 @@ const Cards = ({ title, description, image, featured }) => {
         <h2 className="text-sm sm:text-base font-semibold text-slate-900 mb-1">
           {title}
         </h2>
-        <p className="text-xs font-semibold sm:text-sm text-slate-600 leading-relaxed line-clamp-2 flex-1">
+        <p className="text-xs opacity-70 font-semibold sm:text-sm text-slate-700 leading-relaxed line-clamp-2 flex-1">
           {description}
         </p>
       </div>

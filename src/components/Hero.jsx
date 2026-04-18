@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-
 const Hero = () => {
   const navigate = useNavigate();
 
@@ -8,8 +7,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            'url("https://images.pexels.com/photos/23534042/pexels-photo-23534042.jpeg")',
+          backgroundImage: 'url("/hero.jpg")',
         }}
       />
 
