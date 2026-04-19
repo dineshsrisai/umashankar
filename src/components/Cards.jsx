@@ -9,15 +9,14 @@ const Cards = ({ title, description, image, featured }) => {
       }`}
     >
       <div
-        className={`relative h-44 sm:h-48 flex items-center justify-center overflow-hidden
-        ${featured ? "bg-blue-50" : "bg-white"}`}
+        className={`relative flex items-center justify-center overflow-hidden
+        ${featured ? "h-40 sm:h-44 bg-blue-50" : "h-44 sm:h-48 bg-white"}`}
       >
         {featured && (
           <span className="absolute top-0 left-0 bg-blue-700 text-white text-xs font-semibold px-2.5 py-1 rounded-br-lg">
             Featured
           </span>
         )}
-
         <img
           src={image}
           alt={title}

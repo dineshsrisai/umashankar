@@ -4,8 +4,7 @@ import axios from "axios";
 
 const Printer = () => {
   const [devices, setDevices] = useState([]);
-  const featured = devices.filter((d) => d.featured);
-  const regular = devices.filter((d) => !d.featured);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,13 +17,19 @@ const Printer = () => {
     fetchData();
   }, []);
 
+  const featured = devices.filter((d) => d.featured);
+  const regular = devices.filter((d) => !d.featured);
+
   return (
     <div className="min-h-screen px-4 sm:px-8 lg:px-16 py-8 pb-16">
       {featured.length > 0 && (
         <div className="mb-10">
-          <h2 className="text-lg font-bold text-slate-800 mb-4">
-            Special Services
+          <h2 className="text-lg font-bold text-slate-800 mb-1">
+            Featured Services
           </h2>
+          <p className="text-sm font-semibold text-slate-500 mb-4">
+            Specialist services we are known for
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {featured.map((item, index) => (
               <Cards
@@ -40,9 +45,12 @@ const Printer = () => {
       )}
 
       <div>
-        <h2 className="text-lg font-bold text-slate-800 mb-4">
+        <h2 className="text-lg font-bold text-slate-800 mb-1">
           Products & Repairs
         </h2>
+        <p className="text-sm font-semibold text-slate-500 mb-4">
+          Spare parts, consumables and repair services
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {regular.map((item, index) => (
             <Cards
