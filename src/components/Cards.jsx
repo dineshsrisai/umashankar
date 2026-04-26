@@ -20,6 +20,7 @@ const Cards = ({ title, description, image, featured }) => {
         <img
           src={image}
           alt={title}
+          loading="lazy"
           className="h-full w-full object-contain p-4 mix-blend-multiply hover:scale-105 transition duration-300"
         />
       </div>
