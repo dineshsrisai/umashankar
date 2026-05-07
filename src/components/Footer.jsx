@@ -11,7 +11,7 @@ const Footer = () => {
           </h3>
           <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
             Your neighbourhood expert for printer repair, computer service, and
-            CCTV installation since 2015.
+            CCTV installation since 2015
           </p>
         </div>
 
