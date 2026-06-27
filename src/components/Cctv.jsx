@@ -8,7 +8,7 @@ const Cctv = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await axios.get("http://localhost:3000/cctv");
+        const data = await axios.get("https://umashankar-be.onrender.com/cctv");
         setDevices(data.data);
       } catch (e) {
         console.log(e);

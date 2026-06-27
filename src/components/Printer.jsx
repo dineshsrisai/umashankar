@@ -8,7 +8,9 @@ const Printer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await axios.get("http://localhost:3000/printer");
+        const data = await axios.get(
+          "https://umashankar-be.onrender.com/printer",
+        );
         setDevices(data.data);
       } catch (e) {
         console.log(e);
