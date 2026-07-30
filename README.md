@@ -2,7 +2,7 @@
 
 A responsive React frontend for a service business website covering printer repair, computer/laptop repair, and CCTV installation services based in Palakol, Andhra Pradesh.
 
-🌐 **Live Demo:** [soon](#)
+🌐 **Live Demo:** [View Live Demo](https://umashankarprints.vercel.app/)
 
 ---
 
